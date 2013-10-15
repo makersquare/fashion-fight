@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  contest_id: 
+  side: MyString
+  username: MyString
+  comment: MyString
+
+two:
+  contest_id: 
+  side: MyString
+  username: MyString
+  comment: MyString

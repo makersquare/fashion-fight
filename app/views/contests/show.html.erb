@@ -1,0 +1,39 @@
+
+
+<div class="row">
+  <div class="large-8 columns large-centered">
+    <h3><%= @contest.title %></h3>
+    <div class="comment-wall"></div>
+  </div>
+</div>
+
+
+
+<div id="templates">
+  <script class="comment" type="text/template">
+    <div class="small-3 large-2 columns"><img src="http://placehold.it/50x50&text=[img]" /></div>
+    <div class="small-9 large-10 columns">
+      <b>USER:</b>
+      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p>
+      </div>
+  </script>
+</div>
+
+
+<% content_for :javascript do %>
+<script type="text/javascript">
+
+  var wall = new CommentWall();
+
+  var wallView = new CommentWallView({
+    collection: wall,
+    el: '.comment-wall'
+  });
+
+  wall.add([
+    { username: 'ROBOT A', side: 'left', comment: 'EXCELLENT' },
+    { username: 'ROBOT B', side: 'right', comment: 'YES' }
+  ]);
+
+</script>
+<% end %>
