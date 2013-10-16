@@ -20,5 +20,6 @@
 //= require app/views/comment-view
 //= require app/views/comment-wall-view
 //= require app/views/comment-input-view
+//= require app/views/vote-count-view
 
 $(document).foundation();

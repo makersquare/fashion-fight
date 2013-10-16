@@ -6,10 +6,10 @@
     <h3><%= @contest.title %></h3>
 
     <div class="showcase row">
-      <div class="large-6 columns">
+      <div class="left-side large-6 columns">
         <%= image_tag @contest.left %>
       </div>
-      <div class="large-6 columns">
+      <div class="right-side large-6 columns">
         <%= image_tag @contest.right %>
       </div>
     </div>
@@ -47,6 +47,10 @@
       <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p>
       </div>
   </script>
+
+  <script class="vote-count" type="text/template">
+    <h4>{{ count }} Vote(s)</h4>
+  </script>
 </div>
 
 
@@ -70,6 +74,21 @@
     collection: wall,
     el: 'form.new-comment'
   });
+
+  // Each of these views displays the numebr of votes for each side
+  var leftVoteCount = new VoteCountView({
+    side: 'left',
+    collection: wall
+  });
+  var rightVoteCount = new VoteCountView({
+    side: 'right',
+    collection: wall
+  });
+
+  leftVoteCount.render();
+  rightVoteCount.render();
+  $('.showcase .left-side').append(leftVoteCount.el);
+  $('.showcase .right-side').append(rightVoteCount.el);
 
 </script>
 <% end %>
