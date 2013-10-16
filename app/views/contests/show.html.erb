@@ -57,6 +57,9 @@
 <% content_for :javascript do %>
 <script type="text/javascript">
 
+  /* *
+   * Lesson Step: The Comment Wall View
+   */
   var wall = new CommentWall();
 
   var wallView = new CommentWallView({
@@ -69,12 +72,20 @@
     { username: 'ROBOT B', side: 'right', comment: 'YES' }
   ]);
 
+
+  /* *
+   * Lesson Step: The New Comment Form
+   */
   // The view that handles adding new comments
   var commentForm = new CommentInputView({
     collection: wall,
     el: 'form.new-comment'
   });
 
+
+  /* *
+   * Lesson Step: The Vote Count View
+   */
   // Each of these views displays the numebr of votes for each side
   var leftVoteCount = new VoteCountView({
     side: 'left',
