@@ -17,8 +17,8 @@ two = Contest.create({
   left: "http://i.imgur.com/48ev9Lz.jpg"
 })
 
-one.votes.create(side: 'left', username: 'Bob', comment: 'stilish')
-one.votes.create(side: 'right', username: 'Carl', comment: 'brillient!')
+one.comments.create(side: 'left', username: 'Bob', comment: 'stilish')
+one.comments.create(side: 'right', username: 'Carl', comment: 'brillient!')
 
-two.votes.create(side: 'left', username: 'Bob', comment: 'haha kol')
-two.votes.create(side: 'right', username: 'Alice', comment: 'Wonderful!')
+two.comments.create(side: 'left', username: 'Bob', comment: 'haha kol')
+two.comments.create(side: 'right', username: 'Alice', comment: 'Wonderful!')

@@ -11,17 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015191730) do
+ActiveRecord::Schema.define(version: 20131016184302) do
 
-  create_table "contests", force: true do |t|
-    t.string   "title"
-    t.string   "left"
-    t.string   "right"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "votes", force: true do |t|
+  create_table "comments", force: true do |t|
     t.integer  "contest_id"
     t.string   "side"
     t.string   "username"
@@ -30,6 +22,14 @@ ActiveRecord::Schema.define(version: 20131015191730) do
     t.datetime "updated_at"
   end
 
-  add_index "votes", ["contest_id"], name: "index_votes_on_contest_id"
+  add_index "comments", ["contest_id"], name: "index_comments_on_contest_id"
+
+  create_table "contests", force: true do |t|
+    t.string   "title"
+    t.string   "left"
+    t.string   "right"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
