@@ -19,5 +19,6 @@
 //= require app/models/comment
 //= require app/views/comment-view
 //= require app/views/comment-wall-view
+//= require app/views/comment-input-view
 
 $(document).foundation();

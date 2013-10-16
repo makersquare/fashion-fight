@@ -15,6 +15,25 @@
     </div>
 
     <div class="comment-wall"></div>
+
+    <div class="panel">
+      <h3>Cast Your Vote!</h3>
+      <form class="new-comment">
+        <label>Username</label>
+        <input name="username" type="text" />
+
+        <label>Vote</label>
+        <select name="side">
+          <option value="left">Left Side</option>
+          <option value="right">Right Side</option>
+        </select>
+
+        <label>Comment</label>
+        <textarea name="comment"></textarea>
+
+        <input type="submit" value="Vote and Comment!" />
+      </form>
+    </div>
   </div>
 </div>
 
@@ -45,6 +64,12 @@
     { username: 'ROBOT A', side: 'left', comment: 'EXCELLENT' },
     { username: 'ROBOT B', side: 'right', comment: 'YES' }
   ]);
+
+  // The view that handles adding new comments
+  var commentForm = new CommentInputView({
+    collection: wall,
+    el: 'form.new-comment'
+  });
 
 </script>
 <% end %>
