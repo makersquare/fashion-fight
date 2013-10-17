@@ -1,0 +1,21 @@
+.top-bar
+  ul.title-area
+    li.name
+      h1 = link_to "Fashion Fights", root_path
+    li.toggle-topbar.menu-icon
+      a href="#" <span>Menu</span>
+
+  section.top-bar-section
+    ul.right
+      - if user_signed_in?
+        li = link_to current_user.email, '#'
+        li = link_to 'Edit profile', edit_user_registration_path
+        li = link_to "Sign out", destroy_user_session_path, method: :delete
+      - else
+        li = link_to "Sign up", new_user_registration_path
+        li = link_to "Sign in", new_user_session_path
+
+- if notice.present?
+  .alert-box.radius = notice
+- if alert.present?
+  .alert-box.alert.radius = alert
