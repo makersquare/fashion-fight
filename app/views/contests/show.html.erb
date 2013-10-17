@@ -60,17 +60,16 @@
   /* *
    * Lesson Step: The Comment Wall View
    */
-  var wall = new CommentWall();
+  var wall = new CommentWall([], {
+    url: '<%= contest_comment_api_path @contest %>'
+  });
 
   var wallView = new CommentWallView({
     collection: wall,
     el: '.comment-wall'
   });
 
-  wall.add([
-    { username: 'ROBOT A', side: 'left', comment: 'EXCELLENT' },
-    { username: 'ROBOT B', side: 'right', comment: 'YES' }
-  ]);
+  wall.add(<%= raw @contest.comments.to_json %>);
 
 
   /* *

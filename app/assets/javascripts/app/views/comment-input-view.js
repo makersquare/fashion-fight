@@ -11,7 +11,7 @@
       console.log('New comment data:', newCommentData);
 
       // Adds our new comment to the collection
-      this.collection.add(newCommentData);
+      this.collection.create(newCommentData);
 
       // Clears input values
       $(this.el).find('input[type="text"], textarea').val('');
