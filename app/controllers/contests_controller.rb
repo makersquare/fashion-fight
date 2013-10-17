@@ -13,6 +13,17 @@ class ContestsController < ApplicationController
     render :json => new_comment.to_json, :status => 200
   end
 
+  def destroy_comment
+    @comment = Comment.where(
+      :id => params[:comment_id],
+      :contest_id => params[:contest_id]
+    ).first
+
+    # TODO: Destroy the comment
+
+    render :nothing => true, :status => 200
+  end
+
 private
 
   def comment_params

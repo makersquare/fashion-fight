@@ -4,6 +4,7 @@ FashionFight::Application.routes.draw do
 
   scope :api do
     post 'contests/:id/comments' => 'contests#comment', :as => :contest_comment_api
+    delete 'contests/:contest_id/comments/:comment_id' => 'contests#destroy_comment'
   end
 
   resources :contests, :only => [:index, :show]
