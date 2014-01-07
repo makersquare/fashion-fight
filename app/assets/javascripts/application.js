@@ -15,6 +15,7 @@
 //= require foundation
 //= require underscore
 //= require backbone
+//= require riot
 //= require app/util
 //= require app/models/comment
 //= require app/views/comment-view

@@ -57,6 +57,8 @@
 <% content_for :javascript do %>
 <script type="text/javascript">
 
+  railsComments = <%= raw @contest.comments.to_json %>
+
   /* *
    * Lesson Step: The Comment Wall View
    */
