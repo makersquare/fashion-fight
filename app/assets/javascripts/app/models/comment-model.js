@@ -20,11 +20,6 @@
     $.observable(this);
 
     this.create = function(item){
-      //start state Delete
-      self.items.push(item);
-      $.post(contestURL, item, function() {
-        self.trigger('add', item);
-      });
     };
 
     this.add = function(item){

@@ -62,20 +62,15 @@
 
 <script type="text/javascript">
   // ADD CONTEST URL HERE
-  //start state delete
-  contestURL = '<%= contest_comment_api_path @contest %>';
 </script>
 
 <% content_for :javascript do %>
 <script type="text/javascript">
 
-// start state
-//  loadedComments = [
-//    { username: 'ROBOT A', side: 'left', comment: 'EXCELLENT' },
-//    { username: 'ROBOT B', side: 'right', comment: 'YES' }
-//  ];
-
-  loadedComments = (<%= raw @contest.comments.to_json %>);
+  loadedComments = [
+    { username: 'ROBOT A', side: 'left', comment: 'EXCELLENT' },
+    { username: 'ROBOT B', side: 'right', comment: 'YES' }
+  ];
 
   for(i in loadedComments){
     comments.add(loadedComments[i]);

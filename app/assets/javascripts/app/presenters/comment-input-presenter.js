@@ -5,9 +5,7 @@
     e.preventDefault();
     var newComment =  _.formToJSON($root);
 
-    //start state
-    //comments.add(newComment);
-    comments.create(newComment);
+    comments.add(newComment);
     console.log('New comment data:', newComment);
     $root.find('input[type="text"], textarea').val('')
   });

@@ -5,22 +5,6 @@ class ContestsController < ApplicationController
 
   def show
     @contest = Contest.find(params[:id])
-    respond_to do |format|
-      format.json { render :json => @contest.comments }
-      format.html { render :show }
-    end
-  end
-
-  def comment
-    @contest = Contest.find(params[:id])
-    new_comment = @contest.comments.create(comment_params)
-    render :json => new_comment.to_json, :status => 200
-  end
-
-private
-
-  def comment_params
-    params.permit(:side, :username, :comment)
   end
 
 end
