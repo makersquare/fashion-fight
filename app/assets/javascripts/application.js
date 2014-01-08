@@ -18,8 +18,8 @@
 //= require riot
 //= require app/util
 //= require app/models/comment-model
-//= require app/views/comment-wall-presenter
-//= require app/views/comment-input-presenter
-//= require app/views/vote-count-presenter
+//= require app/presenters/comment-wall-presenter
+//= require app/presenters/comment-input-presenter
+//= require app/presenters/vote-count-presenter
 
 $(document).foundation();

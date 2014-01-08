@@ -36,7 +36,6 @@
       });
     };
 
-    //not current implemented
 //    this.destroy = function(index){
 //      items.splice(index,1);
 //      self.trigger('destroy', index);
