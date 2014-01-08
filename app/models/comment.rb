@@ -1,6 +1,7 @@
 class Comment < ActiveRecord::Base
   belongs_to :contest
 
+  #start state delete
   def as_json(options={})
     {
       id: self.id,

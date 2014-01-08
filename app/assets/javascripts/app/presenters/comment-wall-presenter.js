@@ -3,11 +3,11 @@
   $root = $(".comment-wall");
   template = $("#newComment").html();
 
-  comments.on('read', function (comments) {
-
-    var newHtml = ""
-    for (index in comments){
-      newHtml += $.render(template, comments[index]);
+  comments.on('add', function () {
+    items = comments.items;
+    var newHtml = "";
+    for (index in items){
+      newHtml += $.render(template, items[index]);
     }
     $root.html(newHtml);
 
