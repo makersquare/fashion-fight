@@ -8,9 +8,13 @@
     <div class="showcase row">
       <div class="left-side large-6 columns">
         <%= image_tag @contest.left %>
+        <div class="vote-count">
+        </div>
       </div>
       <div class="right-side large-6 columns">
         <%= image_tag @contest.right %>
+        <div class="vote-count">
+        </div>
       </div>
     </div>
 
@@ -48,8 +52,23 @@
       </div>
   </script>
 
+
+  <script type="text/template" id="newComment">
+    <div class="row comment">
+      <div class="small-3 large-2 columns"><img src="http://placehold.it/50x50&amp;text=[img]"></div>
+      <div class="small-9 large-10 columns">
+        <b>{ username } (chose {side}):</b>
+        <p>{comment}</p>
+      </div>
+     </div>
+  </script>
+
   <script class="vote-count" type="text/template">
     <h4>{{ count }} Vote(s)</h4>
+  </script>
+
+  <script id="newVote-count" type="text/template">
+    <h4>{ count } Vote(s)</h4>
   </script>
 </div>
 
@@ -69,12 +88,12 @@
     url: '<%= contest_comment_api_path @contest %>'
   });
 
-  var wallView = new CommentWallView({
-    collection: wall,
-    el: '.comment-wall'
-  });
-
-  wall.add(<%= raw @contest.comments.to_json %>);
+//  var wallView = new CommentWallView({
+//    collection: wall,
+//    el: '.comment-wall'
+//  });
+//
+//  wall.add(<%= raw @contest.comments.to_json %>);
 
 
   /* *
@@ -91,19 +110,19 @@
    * Lesson Step: The Vote Count View
    */
   // Each of these views displays the numebr of votes for each side
-  var leftVoteCount = new VoteCountView({
-    side: 'left',
-    collection: wall
-  });
-  var rightVoteCount = new VoteCountView({
-    side: 'right',
-    collection: wall
-  });
+//  var leftVoteCount = new VoteCountView({
+//    side: 'left',
+//    collection: wall
+//  });
+//  var rightVoteCount = new VoteCountView({
+//    side: 'right',
+//    collection: wall
+//  });
 
-  leftVoteCount.render();
-  rightVoteCount.render();
-  $('.showcase .left-side').append(leftVoteCount.el);
-  $('.showcase .right-side').append(rightVoteCount.el);
+//  leftVoteCount.render();
+//  rightVoteCount.render();
+//  $('.showcase .left-side').append(leftVoteCount.el);
+//  $('.showcase .right-side').append(rightVoteCount.el);
 
 </script>
 <% end %>

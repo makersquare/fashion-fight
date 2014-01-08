@@ -15,7 +15,20 @@
       // We don't have a model, but we do have our vote count.
       // Updates the vote count via our template.
       var newCommentHtml = this.template({ count: comments.length });
-      $(this.el).html(newCommentHtml);
+//      $(this.el).html(newCommentHtml);
+    }
+  });
+
+  var $root = $(".comment-wall");
+  var template = $("#newVote-count").html();
+  var sides = ["right", "left"];
+
+  comments.on('read', function () {
+    for(var i in sides){
+      var side = sides[i];
+      var count = comments.filterBySide(side).length;
+      var newHtml = $.render(template, {count: count});
+      $("." + side + "-side .vote-count").html(newHtml);
     }
   });
 
