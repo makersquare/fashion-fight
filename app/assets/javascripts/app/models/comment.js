@@ -14,19 +14,43 @@
   });
 
 
-  window.Comments = function Comments(){
-    var self = this,
-      items = railsComments;
+  var Comments = function Comments(){
+    var items = [],
+      self = this;
+    var contestUrl = "/contests/" + contest.id;
     $.observable(this);
 
-    self.create = function(item){
+    this.create = function(item){
       items.push(item);
-      self.trigger("add", item)
-    }
+      $.post( "/api" + contestUrl + "/comments", item, function() {
+        self.trigger('add', item);
+      });
+    };
 
-    self.destroy = function(){
+    this.read = function(index){
+      $.get(contestUrl, function( data ) {
+        items = data;
+        self.trigger('read', items);
+        console.log(data);
+      });
+    };
 
-    }
+    //not current implemented
+//    this.destroy = function(index){
+//      items.splice(index,1);
+//      self.trigger('destroy', index);
+//    };
+
+    this.filterBySide =  function (side) {
+      return _.filter(items, function(item){return item.side === side});
+    };
+//
+//    self.update = function(index, item){
+//      items[index] = item;
+//      items.trigger('update', index, item)
+//    };
   }
+
+  window.comments = new Comments();
 
 })();

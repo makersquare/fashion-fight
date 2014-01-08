@@ -5,6 +5,10 @@ class ContestsController < ApplicationController
 
   def show
     @contest = Contest.find(params[:id])
+    respond_to do |format|
+      format.json { render :json => @contest.comments }
+      format.html { render :show }
+    end
   end
 
   def comment
