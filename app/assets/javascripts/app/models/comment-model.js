@@ -24,6 +24,7 @@
       items.push(item);
       $.post( "/api" + contestUrl + "/comments", item, function() {
         self.trigger('add', item);
+        self.read();
       });
     };
 
@@ -52,5 +53,6 @@
   }
 
   window.comments = new Comments();
+  comments.read();
 
 })();

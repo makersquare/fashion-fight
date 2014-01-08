@@ -17,10 +17,9 @@
 //= require backbone
 //= require riot
 //= require app/util
-//= require app/models/comment
-//= require app/views/comment-view
-//= require app/views/comment-wall-view
-//= require app/views/comment-input-view
-//= require app/views/vote-count-view
+//= require app/models/comment-model
+//= require app/views/comment-wall-presenter
+//= require app/views/comment-input-presenter
+//= require app/views/vote-count-presenter
 
 $(document).foundation();

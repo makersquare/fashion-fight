@@ -80,49 +80,5 @@
 <% content_for :javascript do %>
 <script type="text/javascript">
 
-
-  /* *
-   * Lesson Step: The Comment Wall View
-   */
-  var wall = new CommentWall([], {
-    url: '<%= contest_comment_api_path @contest %>'
-  });
-
-//  var wallView = new CommentWallView({
-//    collection: wall,
-//    el: '.comment-wall'
-//  });
-//
-//  wall.add(<%= raw @contest.comments.to_json %>);
-
-
-  /* *
-   * Lesson Step: The New Comment Form
-   */
-  // The view that handles adding new comments
-  var commentForm = new CommentInputView({
-    collection: wall,
-    el: 'form.new-comment'
-  });
-
-
-  /* *
-   * Lesson Step: The Vote Count View
-   */
-  // Each of these views displays the numebr of votes for each side
-//  var leftVoteCount = new VoteCountView({
-//    side: 'left',
-//    collection: wall
-//  });
-//  var rightVoteCount = new VoteCountView({
-//    side: 'right',
-//    collection: wall
-//  });
-
-//  leftVoteCount.render();
-//  rightVoteCount.render();
-//  $('.showcase .left-side').append(leftVoteCount.el);
-//  $('.showcase .right-side').append(rightVoteCount.el);
-
 </script>
 <% end %>
