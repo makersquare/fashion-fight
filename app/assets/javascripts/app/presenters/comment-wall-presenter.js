@@ -1,16 +1,11 @@
 (function () {
 
-  $root = $(".comment-wall");
-  template = $("#newComment").html();
+  var $root = $('.comment-wall');
+  var commentTemplate = $('#templates .comment').html();
 
-  comments.on('add', function () {
-    items = comments.items;
-    var newHtml = "";
-    for (index in items){
-      newHtml += $.render(template, items[index]);
-    }
-    $root.html(newHtml);
-
+  comments.on('create', function (newComment) {
+    var newHtml = $.render(commentTemplate, newComment);
+    $root.append(newHtml);
   });
 
 })();

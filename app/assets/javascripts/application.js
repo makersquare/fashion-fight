@@ -13,10 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require underscore
-//= require backbone
 //= require riot
-//= require app/util
 //= require app/models/comment-model
 //= require app/presenters/comment-wall-presenter
 //= require app/presenters/comment-input-presenter

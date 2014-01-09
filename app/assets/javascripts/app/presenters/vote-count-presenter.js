@@ -1,16 +1,22 @@
 (function () {
 
-//  var $root = $(".comment-wall");
-  var template = $("#newVote-count").html();
-  var sides = ["right", "left"];
+  var voteCountTemplate = $("#template .vote-count").html();
+  // Our root is split into two; the vote count for
+  // contestant A, and the vote count for contentant B.
+  var $root = {
+    left: $('.showcase .left-side .vote-count'),
+    right: $('.showcase .right-side .vote-count')
+  };
 
-  comments.on('add', function () {
-    for(var i in sides){
-      var side = sides[i];
-      var count = comments.filterBySide(side).length;
-      var newHtml = $.render(template, {count: count});
-      $("." + side + "-side .vote-count").html(newHtml);
-    }
+  comments.on('create', function (newComment) {
+
+    // Get the total number of votes for whichever side the comment voted for
+    var voteCount = comments.filterBySide(newComment.side).length;
+
+    // Select the correct side
+    $voteCountElement = $root[newComment.side];
+    // Update the vote count on the page
+    $voteCountElement.text(voteCount);
   });
 
 })();
