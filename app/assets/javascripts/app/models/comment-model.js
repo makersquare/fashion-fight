@@ -21,6 +21,14 @@
       return results;
     };
 
+    this.initializeWith = function (initialComments) {
+      for (var i = 0; i < initialComments.length; i += 1) {
+        var c = initialComments[i];
+        comments.push(c);
+        this.trigger('create', c);
+      }
+    }
+
   };
 
 })();

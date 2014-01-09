@@ -98,9 +98,7 @@
   ];
 
   // Add all initial comments
-  for (var i = 0; i < serverComments.length; i += 1) {
-    contestComments.create(serverComments[i]);
-  }
+  contestComments.initializeWith(serverComments);
 
 })();
 </script>
