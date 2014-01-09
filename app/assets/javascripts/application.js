@@ -14,9 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require riot
-//= require app/models/comment-model
-//= require app/presenters/comment-wall-presenter
-//= require app/presenters/comment-input-presenter
-//= require app/presenters/vote-count-presenter
+//= require_tree ./app/models
+//= require_tree ./app/presenters
 
 $(document).foundation();

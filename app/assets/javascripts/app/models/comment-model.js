@@ -1,6 +1,6 @@
 (function () {
 
-  var Comments = function Comments () {
+  window.Comment = function () {
     var comments = [];
 
     $.observable(this);
@@ -21,8 +21,6 @@
       return results;
     };
 
-  }
-
-  window.comments = new Comments();
+  };
 
 })();

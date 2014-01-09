@@ -57,21 +57,51 @@
 </div>
 
 
-<script type="text/javascript">
-  // ADD CONTEST URL HERE
-</script>
-
 <% content_for :javascript do %>
 <script type="text/javascript">
+(function () {
+  // Create our comments model instance
+  var contestComments = new Comment();
 
-  var initialComments = [
+  // // // // // // // // // // // // // // // // // // // // // //
+  // Initialize all presenters that we want to use for this page //
+  // // // // // // // // // // // // // // // // // // // // // //
+  var formPresenter = new CommentForm({
+    root: $('form.new-comment'),
+    comments: contestComments
+  });
+
+  var wallPresenter = new CommentWall({
+    root: $('.comment-wall'),
+    comments: contestComments
+  });
+
+  // Create TWO vote counters, one for each side
+  var leftVoteCounter = new VoteCounter({
+    root: $('.showcase .left-side .vote-count'),
+    comments: contestComments,
+    side: 'left'
+  });
+
+  var rightVoteCounter = new VoteCounter({
+    root: $('.showcase .right-side .vote-count'),
+    comments: contestComments,
+    side: 'right'
+  });
+
+  // // // // // // // // // // // // // // //
+  // Grab some comments that already exist! //
+  // // // // // // // // // // // // // // //
+  var serverComments = [
     { username: 'ROBOT A', side: 'left', comment: 'EXCELLENT' },
     { username: 'ROBOT B', side: 'right', comment: 'YES' }
   ];
 
-  for (var i = 0; i < initialComments.length; i += 1) {
-    comments.create(initialComments[i]);
+  // Add all initial comments
+  for (var i = 0; i < serverComments.length; i += 1) {
+    contestComments.create(serverComments[i]);
   }
 
+})();
 </script>
 <% end %>
