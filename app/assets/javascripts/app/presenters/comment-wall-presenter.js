@@ -7,7 +7,7 @@
     var comments = options.comments;
 
     comments.on('create', function (newComment) {
-      var newHtml = $.render(commentTemplate, newComment);
+      var newHtml = Robin.render(commentTemplate, newComment);
       $root.append(newHtml);
     });
   };

@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require riot
+//= require robin
 //= require_tree ./app/models
 //= require_tree ./app/presenters
 

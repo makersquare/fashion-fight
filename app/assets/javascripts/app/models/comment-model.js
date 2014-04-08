@@ -3,7 +3,7 @@
   window.Comment = function () {
     var comments = [];
 
-    $.observable(this);
+    Robin.extend(this, Robin.Events);
 
     this.create = function (newComment) {
       comments.push(newComment);
